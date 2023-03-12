@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 /**
 * 2/22/23
 * CSC 153
 * Susanna Quayle
 * Sprint 1
 */
+
 namespace ConsoleApp
 {
     class Program
@@ -62,6 +64,7 @@ namespace ConsoleApp
             Console.WriteLine("5. Display items");
             Console.WriteLine("6. Display mobs");
             Console.WriteLine("7. Exit");
+            Console.WriteLine("HELLO");
             Console.Write("Select an option: ");
 
             switch (Console.ReadLine())
