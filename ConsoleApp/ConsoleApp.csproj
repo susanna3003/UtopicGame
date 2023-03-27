@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utopic_Library\Utopic_Library.csproj">
+      <Project>{ddeebd3f-5d57-45e6-b09d-d53deb99a313}</Project>
+      <Name>Utopic_Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

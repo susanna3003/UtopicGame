@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{320A08B3-61E4-4E1C-874E-C50B57DCE772}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utopic_Library", "Utopic_Library\Utopic_Library.csproj", "{DDEEBD3F-5D57-45E6-B09D-D53DEB99A313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{320A08B3-61E4-4E1C-874E-C50B57DCE772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320A08B3-61E4-4E1C-874E-C50B57DCE772}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{320A08B3-61E4-4E1C-874E-C50B57DCE772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDEEBD3F-5D57-45E6-B09D-D53DEB99A313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDEEBD3F-5D57-45E6-B09D-D53DEB99A313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDEEBD3F-5D57-45E6-B09D-D53DEB99A313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDEEBD3F-5D57-45E6-B09D-D53DEB99A313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
