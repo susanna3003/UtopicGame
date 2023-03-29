@@ -19,7 +19,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Utopic_Library.Utopic_Methods.MainUtopicMenu();
+            Utopic_Methods.MainUtopicMenu();
+
+            Utopic_Methods.CombatMethod();
         }
     }
 }

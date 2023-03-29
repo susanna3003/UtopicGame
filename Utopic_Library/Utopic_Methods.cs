@@ -135,14 +135,19 @@ namespace Utopic_Library
                 {
                     case "1":
                         input = File.OpenText("Rooms.txt");
-                        while (!input.EndOfStream)
+                        /*while (!input.EndOfStream)
                         {
                             room1 = input.ReadLine();
                             room2 = input.ReadLine();
                             room3 = input.ReadLine();
                             room4 = input.ReadLine();
                             room5 = input.ReadLine();
-                        }
+                        }*/
+                        Console.WriteLine(room1);
+                        Console.WriteLine(room2);
+                        Console.WriteLine(room3);
+                        Console.WriteLine(room4);
+                        Console.WriteLine(room5);
                         break;
 
                     case "2":
@@ -198,6 +203,7 @@ namespace Utopic_Library
             String damage = "1D8";
             Char[] delim = { 'D' };
             string[] tokenDamage = damage.Split(delim);
+
         }
     }
 }
