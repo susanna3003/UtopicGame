@@ -40,7 +40,8 @@ namespace Utopic_Library
                 Console.WriteLine("4. Display treasure");
                 Console.WriteLine("5. Display items");
                 Console.WriteLine("6. Display mobs");
-                Console.WriteLine("7. Exit");
+                Console.WriteLine("7. Fight!");
+                Console.WriteLine("8. Exit");
                 Console.Write("Select an option: ");
 
                 //read txt files
@@ -102,6 +103,10 @@ namespace Utopic_Library
                         break;
 
                     case "7":
+                        CombatMethod();
+                        break;
+
+                    case "8":
                         Environment.Exit(0);
                         userContinue = false;
                         break;
@@ -115,12 +120,102 @@ namespace Utopic_Library
         {
             //Create random object
             Random rand = new Random();
-            int playerHP = rand.Next(100, 151);
-            int mobHP = rand.Next(100, 151);
+            int playerAttack = rand.Next(10, 21);
+            int mobAttack = rand.Next(10, 21);
+            int playerHP = 100, mobHP = 100;
 
             String damage = "1D8";
             Char[] delim = { 'D' };
             string[] tokenDamage = damage.Split(delim);
+
+            bool ifCombat = false;
+            bool ans = false;
+            Console.WriteLine("A deadly enemy approaches!");
+            Console.WriteLine("Will you go into combat? Y/N");
+            while (ans == false)
+            {
+                string userAns = Console.ReadLine();
+                if (userAns == "Y")
+                {
+                    ifCombat = true;
+                    ans = true;
+                }
+                else if (userAns == "N")
+                {
+                    ifCombat = false;
+                    ans = true;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input, please try again.");
+                    Console.ReadLine();
+                    ans = false;
+                }
+            }
+            
+
+            int mobLevel = rand.Next(1, 6); // will later define mobLevels for each mob but as of now just generating rand level
+            int lucky = rand.Next(0, 2); // determines if command goes in player's favor - 0 == player's luck, 1 == mob's luck - FIGURE OUT HOW TO REGENERATE LUCKY ON EACH TURN
+            if (ifCombat == true)
+            {
+                Console.WriteLine("Available commands: S - strike, B - block, F - flee");
+                string combatCommand = Console.ReadLine();
+                for (int i = 0; i < mobLevel; i++) //create mobLevel to control length of battle (higher level mob --> longer battle)
+                {
+                    if (combatCommand == "S" && lucky == 0)
+                    {
+                        mobHP -= playerAttack;
+                        Console.WriteLine("Succesful strike!");
+                        Console.ReadLine();
+                    }
+                    else if (combatCommand == "S" && lucky == 1)
+                    {
+                        playerHP -= mobAttack;
+                        Console.WriteLine("You've been damaged!");
+                        Console.ReadLine();
+                    }
+                    else if (combatCommand == "B" && lucky == 0)
+                    {
+                        Console.WriteLine("(MOBTYPE)'s attack has been blocked!");
+                        Console.ReadLine();
+                    }
+                    else 
+                    {
+                        playerHP -= mobAttack;
+                        Console.WriteLine("(MOBTYPE) evaded your block and damaged you!");
+                        Console.ReadLine();
+                    }
+                }
+
+                if (combatCommand == "F" && lucky == 0)
+                {
+                    Console.WriteLine("You've fled the battle!");
+                    Console.ReadLine();
+                }
+                else if (combatCommand == "F" && lucky == 1)
+                {
+                    playerHP -= mobAttack;
+                    Console.WriteLine("You fled the battle but (MOBTYPE) got one last strike in!");
+                    Console.ReadLine();
+                }
+                else if (playerHP > mobHP)
+                {
+                    Console.WriteLine("You have won the battle!");
+                    Console.WriteLine("PlayerHP: " + playerHP + " MobHP: " + mobHP);
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("You have lost the battle! Better luck next time!");
+                    Console.WriteLine("PlayerHP: " + playerHP + " MobHP: " + mobHP);
+                    Console.ReadLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Very well, perhaps the next battle shall be yours.");
+                Console.ReadLine();
+            }
 
         }
     }
