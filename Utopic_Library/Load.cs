@@ -13,7 +13,7 @@ namespace Utopic_Library
 
         public static void LoadRooms()
         {
-            input = File.OpenText("Rooms.txt");
+            input = File.OpenText(@"C:\Users\quayles5806\Source\Repos\UtopicGame\Utopic_Library\Menu Items\Rooms.txt");
             while (!input.EndOfStream)
             {
                 World.room1 = input.ReadLine();
@@ -27,7 +27,7 @@ namespace Utopic_Library
 
         public static void LoadWeapons()
         {
-            input = File.OpenText("Weapons.txt");
+            input = File.OpenText(@"C:\Users\quayles5806\Source\Repos\UtopicGame\Utopic_Library\Menu Items\Weapons.txt");
             while (!input.EndOfStream)
             {
                 World.weapon1 = input.ReadLine();
@@ -39,7 +39,7 @@ namespace Utopic_Library
 
         public static void LoadPotions()
         {
-            input = File.OpenText("Potions.txt");
+            input = File.OpenText(@"C:\Users\quayles5806\Source\Repos\UtopicGame\Utopic_Library\Menu Items\Potions.txt");
             while (!input.EndOfStream)
             {
                 World.potion1 = input.ReadLine();
@@ -49,7 +49,7 @@ namespace Utopic_Library
 
         public static void LoadTreasures()
         {
-            input = File.OpenText("Treasures.txt");
+            input = File.OpenText(@"C:\Users\quayles5806\Source\Repos\UtopicGame\Utopic_Library\Menu Items\Treasures.txt");
             while (!input.EndOfStream)
             {
                 World.treasure1 = input.ReadLine();
@@ -60,7 +60,7 @@ namespace Utopic_Library
 
         public static void LoadItems()
         {
-            input = File.OpenText("Items.txt");
+            input = File.OpenText(@"C:\Users\quayles5806\Source\Repos\UtopicGame\Utopic_Library\Menu Items\Items.txt");
             while (!input.EndOfStream)
             {
                 World.item1 = input.ReadLine();
@@ -72,7 +72,7 @@ namespace Utopic_Library
 
         public static void LoadMobs()
         {
-            input = File.OpenText("Mobs.txt");
+            input = File.OpenText(@"C:\Users\quayles5806\Source\Repos\UtopicGame\Utopic_Library\Menu Items\Mobs.txt");
             while (!input.EndOfStream)
             {
                 World.mob1 = input.ReadLine();

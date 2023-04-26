@@ -122,11 +122,11 @@ namespace Utopic_Library
             Random rand = new Random();
             int playerAttack = rand.Next(10, 21);
             int mobAttack = rand.Next(10, 21);
-            int playerHP = 100, mobHP = 100;
+            int playerHP = 50, mobHP = 50;
 
-            String damage = "1D8";
-            Char[] delim = { 'D' };
-            string[] tokenDamage = damage.Split(delim);
+            //String damage = "1D8";
+            //Char[] delim = { 'D' };
+            //string[] tokenDamage = damage.Split(delim);
 
             bool ifCombat = false;
             bool ans = false;
@@ -158,14 +158,20 @@ namespace Utopic_Library
             int lucky = rand.Next(0, 2); // determines if command goes in player's favor - 0 == player's luck, 1 == mob's luck - FIGURE OUT HOW TO REGENERATE LUCKY ON EACH TURN
             if (ifCombat == true)
             {
+                Console.WriteLine("Your opponent is a level " + mobLevel + " which is the number of rounds it will take to end the battle!");
                 Console.WriteLine("Available commands: S - strike, B - block, F - flee");
                 string combatCommand = Console.ReadLine();
                 for (int i = 0; i < mobLevel; i++) //create mobLevel to control length of battle (higher level mob --> longer battle)
                 {
+                    lucky = rand.Next(0, 2);
+                    playerAttack = rand.Next(10, 21);
+                    mobAttack = rand.Next(10, 21);
+
                     if (combatCommand == "S" && lucky == 0)
                     {
                         mobHP -= playerAttack;
                         Console.WriteLine("Succesful strike!");
+                        Console.WriteLine("You dealt " + playerAttack + " damage!");
                         Console.ReadLine();
                     }
                     else if (combatCommand == "S" && lucky == 1)
